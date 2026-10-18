@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2D43C7">
+  <meta name="description" content="Formulario de práctica del taller de desarrollo web.">
+  <title>Registro | Formulario web</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="hero-kicker">Taller de desarrollo web</p>
+        <h1 id="page-title">Crea tu perfil</h1>
+        <p class="hero-description">Completa tus datos para practicar el uso de formularios web.</p>
+      </div>
+      <div class="hero-symbol" aria-hidden="true"><span>&lt;/&gt;</span></div>
+    </header>
+
+    <section class="form-panel" aria-labelledby="form-title">
+      <div class="form-heading">
+        <h2 id="form-title">Información personal</h2>
+        <p class="required-note"><span aria-hidden="true">*</span> Campo obligatorio</p>
+      </div>
+
+      <form id="registro-form" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="nombre">Nombre completo <span aria-hidden="true">*</span></label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Ej.: Alex Rivera" minlength="2" maxlength="60" required aria-describedby="nombre-error">
+            <p class="field-error" id="nombre-error"></p>
+          </div>
+
+          <div class="field">
+            <label for="correo">Correo electrónico <span aria-hidden="true">*</span></label>
+            <input id="correo" name="correo" type="email" autocomplete="email" placeholder="nombre@ejemplo.com" required aria-describedby="correo-error">
+            <p class="field-error" id="correo-error"></p>
+          </div>
+
+          <div class="field">
+            <label for="contrasena">Contraseña <span aria-hidden="true">*</span></label>
+            <input id="contrasena" name="contrasena" type="password" autocomplete="new-password" placeholder="Mínimo 8 caracteres" minlength="8" required aria-describedby="contrasena-hint contrasena-error">
+            <p class="field-hint" id="contrasena-hint">Usa al menos 8 caracteres.</p>
+            <p class="field-error" id="contrasena-error"></p>
+          </div>
+
+          <div class="field">
+            <label for="edad">Edad <span aria-hidden="true">*</span></label>
+            <input id="edad" name="edad" type="number" inputmode="numeric" placeholder="Ej.: 20" min="1" max="120" step="1" required aria-describedby="edad-error">
+            <p class="field-error" id="edad-error"></p>
+          </div>
+
+          <div class="field">
+            <label for="telefono">Teléfono <span aria-hidden="true">*</span></label>
+            <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="Ej.: 123 456 7890" pattern="\+?[0-9\s().-]+" required aria-describedby="telefono-hint telefono-error">
+            <p class="field-hint" id="telefono-hint">Escribe entre 7 y 15 dígitos. Puedes usar un + inicial, espacios, paréntesis, puntos o guiones.</p>
+            <p class="field-error" id="telefono-error"></p>
+          </div>
+
+          <div class="field">
+            <label for="perfil">Perfil <span aria-hidden="true">*</span></label>
+            <select id="perfil" name="perfil" required aria-describedby="perfil-error">
+              <option value="" selected disabled>Selecciona una opción</option>
+              <option value="estudiante">Estudiante</option>
+              <option value="docente">Docente</option>
+              <option value="otro">Otro</option>
+            </select>
+            <p class="field-error" id="perfil-error"></p>
+          </div>
+        </div>
+
+        <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+        <div class="form-footer">
+          <p class="privacy-note">Los datos se conservan solo en memoria durante esta sesión. No se envían a un servidor.</p>
+          <button class="submit-button" type="submit">Validar y guardar datos</button>
+        </div>
+      </form>
+    </section>
+    <footer class="page-footer">Ejercicio educativo de formularios web</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,637 @@
+/* ==========================================================================
+   Tema propio sobre Bootstrap 5
+   Conserva la identidad visual del formulario de la Guía 1:
+   cobalto, amarillo, tinta, títulos en Georgia y sombras sólidas.
+   ========================================================================== */
+
+:root {
+  --ink: #17224c;
+  --muted: #4a5878;
+  --line: #7786a8;
+  --canvas: #eef3ff;
+  --surface: #ffffff;
+  --cobalt: #2d43c7;
+  --cobalt-dark: #2336a3;
+  --cobalt-soft: #e3e8ff;
+  --highlight: #ffe36e;
+  --highlight-dark: #ffda48;
+  --error: #a52137;
+  --success: #176447;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-code: 'Courier New', Courier, monospace;
+
+  /* Variables de Bootstrap redefinidas con la paleta del proyecto */
+  --bs-body-font-family: 'Atkinson Hyperlegible', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --bs-body-font-size: 1.0625rem;
+  --bs-body-line-height: 1.6;
+  --bs-body-color: var(--ink);
+  --bs-body-bg: var(--canvas);
+  --bs-heading-color: var(--ink);
+  --bs-secondary-color: var(--muted);
+  --bs-primary: #2d43c7;
+  --bs-primary-rgb: 45, 67, 199;
+  --bs-danger: #a52137;
+  --bs-danger-rgb: 165, 33, 55;
+  --bs-success: #176447;
+  --bs-success-rgb: 23, 100, 71;
+  --bs-link-color: #2d43c7;
+  --bs-link-color-rgb: 45, 67, 199;
+  --bs-link-hover-color: #2336a3;
+  --bs-link-hover-color-rgb: 35, 54, 163;
+  --bs-border-color: var(--line);
+  --bs-border-radius: 3px;
+  --bs-border-radius-sm: 2px;
+  --bs-border-radius-lg: 4px;
+  --bs-form-valid-color: #176447;
+  --bs-form-valid-border-color: #176447;
+  --bs-form-invalid-color: #a52137;
+  --bs-form-invalid-border-color: #a52137;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* compensa la barra de navegación fija */
+}
+
+body {
+  min-width: 320px;
+  background: var(--canvas);
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--cobalt);
+  outline-offset: 3px;
+}
+
+.enlace-saltar {
+  position: absolute;
+  z-index: 2000;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: var(--highlight);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  font-weight: 700;
+}
+
+/* ---------- Botones ---------- */
+
+.btn {
+  --bs-btn-font-weight: 700;
+  --bs-btn-border-width: 2px;
+  --bs-btn-padding-y: 0.65rem;
+  --bs-btn-padding-x: 1.25rem;
+  --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(45, 67, 199, 0.35);
+}
+
+.btn-lg {
+  --bs-btn-padding-y: 0.8rem;
+  --bs-btn-padding-x: 1.6rem;
+  --bs-btn-font-size: 1.1rem;
+}
+
+.btn-taller {
+  --bs-btn-color: var(--ink);
+  --bs-btn-bg: var(--highlight);
+  --bs-btn-border-color: var(--ink);
+  --bs-btn-hover-color: var(--ink);
+  --bs-btn-hover-bg: var(--highlight-dark);
+  --bs-btn-hover-border-color: var(--ink);
+  --bs-btn-active-color: var(--ink);
+  --bs-btn-active-bg: var(--highlight-dark);
+  --bs-btn-active-border-color: var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.14s ease, box-shadow 0.14s ease, background-color 0.14s ease;
+}
+
+.btn-taller:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.btn-taller:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--ink);
+}
+
+.btn-outline-taller {
+  --bs-btn-color: var(--ink);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: var(--ink);
+  --bs-btn-hover-color: var(--ink);
+  --bs-btn-hover-bg: var(--cobalt-soft);
+  --bs-btn-hover-border-color: var(--ink);
+  --bs-btn-active-color: var(--ink);
+  --bs-btn-active-bg: var(--cobalt-soft);
+  --bs-btn-active-border-color: var(--ink);
+}
+
+.hero .btn-outline-light {
+  --bs-btn-hover-color: var(--cobalt);
+  --bs-btn-active-color: var(--cobalt);
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar-taller {
+  --bs-navbar-padding-y: 0.75rem;
+  --bs-navbar-color: var(--ink);
+  --bs-navbar-hover-color: var(--cobalt);
+  --bs-navbar-active-color: var(--cobalt);
+  --bs-navbar-toggler-border-color: var(--ink);
+  --bs-navbar-toggler-focus-width: 0.2rem;
+  background: var(--surface);
+  border-bottom: 2px solid var(--ink);
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.marca:hover {
+  color: var(--ink);
+}
+
+.marca-simbolo {
+  display: inline-grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 2px solid var(--ink);
+  background: var(--highlight);
+  color: var(--cobalt);
+  box-shadow: 3px 3px 0 var(--ink);
+  font-family: var(--font-code);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.08em;
+}
+
+.navbar-taller .nav-link {
+  font-weight: 700;
+  padding-inline: 0.75rem !important;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar-taller .nav-link.active {
+  border-bottom-color: var(--cobalt);
+}
+
+.navbar-toggler {
+  padding: 0.35rem 0.6rem;
+  border-width: 2px;
+  color: var(--ink);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding-block: clamp(3.5rem, 9vw, 7rem);
+  background: var(--cobalt);
+  color: #fff;
+  border-bottom: 2px solid var(--ink);
+  overflow: hidden;
+}
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.2rem;
+  color: var(--highlight);
+  font-weight: 700;
+}
+
+.hero-kicker::before {
+  width: 1.15rem;
+  height: 0.2rem;
+  background: var(--highlight);
+  content: '';
+}
+
+.hero-titulo {
+  margin-bottom: 1.25rem;
+  color: #fff;
+  font-size: clamp(2.6rem, 6.5vw, 5.25rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.hero-descripcion {
+  max-width: 36rem;
+  margin-bottom: 2rem;
+  color: #edf0ff;
+  font-size: 1.15rem;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.codigo-tile {
+  max-width: 26rem;
+  margin-inline: auto;
+  transform: rotate(2.5deg);
+}
+
+.codigo {
+  margin: 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 2px solid var(--ink);
+  background: var(--highlight);
+  color: var(--ink);
+  box-shadow: 10px 10px 0 var(--ink);
+  font-family: var(--font-code);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-weight: 700;
+  line-height: 1.6;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.codigo-etiqueta {
+  color: var(--cobalt);
+}
+
+.codigo-tile figcaption {
+  margin-top: 1.5rem;
+  color: #edf0ff;
+  font-size: 0.95rem;
+}
+
+/* ---------- Secciones ---------- */
+
+.seccion {
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+}
+
+/* Banda blanca que separa las sesiones del formulario */
+.seccion-clara {
+  background: var(--surface);
+  border-bottom: 2px solid var(--ink);
+}
+
+.titulo-seccion {
+  margin-bottom: 1rem;
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.subtitulo-seccion {
+  font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+  font-weight: 700;
+}
+
+.texto-seccion {
+  max-width: 40rem;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+/* Sesiones (Servicios) */
+
+.sesion {
+  padding-top: 1.25rem;
+  border-top: 3px solid var(--ink);
+}
+
+.sesion-numero {
+  color: var(--cobalt);
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 0.9;
+}
+
+.sesion-icono {
+  color: var(--ink);
+  font-size: 1.6rem;
+}
+
+.sesion-titulo {
+  margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.badge-tema {
+  padding: 0.4em 0.7em;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* ---------- Formulario ---------- */
+
+.seccion-registro {
+  padding-bottom: clamp(4rem, 9vw, 7rem);
+}
+
+.nota-privacidad {
+  display: flex;
+  gap: 0.6rem;
+  max-width: 24rem;
+  margin: 1.5rem 0 0;
+  padding: 1rem;
+  border-left: 4px solid var(--cobalt);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.nota-privacidad .bi {
+  color: var(--cobalt);
+  font-size: 1.15rem;
+}
+
+.panel-formulario {
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  border: 1px solid var(--ink);
+  border-top: 8px solid var(--highlight);
+  background: var(--surface);
+  box-shadow: 12px 12px 0 var(--ink);
+}
+
+.encabezado-formulario {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.form-label {
+  margin-bottom: 0.45rem;
+  font-weight: 700;
+}
+
+.obligatorio {
+  color: var(--cobalt);
+  font-weight: 700;
+}
+
+.form-control,
+.form-select {
+  min-height: 3.25rem;
+  border-width: 2px;
+  color: var(--ink);
+}
+
+.form-control::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--cobalt);
+  box-shadow: 0 0 0 0.25rem rgba(45, 67, 199, 0.25);
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid {
+  background-color: #fff9fa;
+}
+
+/* Íconos de validación de Bootstrap con los colores del proyecto */
+.form-select.is-invalid:not([multiple]):not([size]) {
+  --bs-form-select-bg-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23a52137'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23a52137' stroke='none'/%3e%3c/svg%3e");
+}
+
+.form-select.is-valid:not([multiple]):not([size]) {
+  --bs-form-select-bg-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23176447' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+}
+
+.form-control.is-invalid {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23a52137'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23a52137' stroke='none'/%3e%3c/svg%3e");
+}
+
+.form-control.is-valid {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23176447' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+}
+
+.invalid-feedback {
+  font-weight: 700;
+}
+
+/* Botón para mostrar u ocultar la contraseña */
+.btn-ver-contrasena {
+  --bs-btn-padding-x: 0.9rem;
+  --bs-btn-color: var(--ink);
+  --bs-btn-border-color: var(--line);
+  --bs-btn-hover-color: var(--cobalt);
+  --bs-btn-hover-bg: var(--cobalt-soft);
+  --bs-btn-hover-border-color: var(--line);
+  --bs-btn-active-color: var(--cobalt);
+  --bs-btn-active-bg: var(--cobalt-soft);
+  --bs-btn-active-border-color: var(--line);
+  font-size: 1.15rem;
+}
+
+.input-group:has(.is-invalid) .btn-ver-contrasena {
+  --bs-btn-border-color: var(--error);
+  --bs-btn-hover-border-color: var(--error);
+}
+
+.input-group:has(.is-valid) .btn-ver-contrasena {
+  --bs-btn-border-color: var(--success);
+  --bs-btn-hover-border-color: var(--success);
+}
+
+.seguridad {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.seguridad .progress {
+  height: 0.4rem;
+  border-radius: 0;
+  background: var(--cobalt-soft);
+}
+
+.seguridad .progress-bar.bg-warning {
+  background-color: #b7791f !important;
+}
+
+.alert {
+  --bs-alert-border-radius: 3px;
+  border-width: 2px;
+  font-weight: 700;
+}
+
+.alert-success {
+  --bs-alert-color: var(--success);
+  --bs-alert-bg: #e7f4ee;
+  --bs-alert-border-color: var(--success);
+}
+
+.alert-danger {
+  --bs-alert-color: var(--error);
+  --bs-alert-bg: #fbecef;
+  --bs-alert-border-color: var(--error);
+}
+
+.pie-formulario {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+/* Tabla de inscripciones */
+
+.tabla-registros {
+  margin-top: clamp(3.5rem, 7vw, 5rem);
+}
+
+.tabla-registros .table {
+  --bs-table-bg: var(--surface);
+  --bs-table-hover-bg: var(--cobalt-soft);
+  border: 2px solid var(--ink);
+}
+
+.tabla-registros thead th {
+  background: var(--ink);
+  color: #fff;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.btn-quitar {
+  --bs-btn-padding-y: 0.3rem;
+  --bs-btn-padding-x: 0.6rem;
+  --bs-btn-border-width: 0;
+  --bs-btn-color: var(--error);
+  --bs-btn-hover-color: var(--error);
+  --bs-btn-hover-bg: #fbecef;
+  --bs-btn-active-color: var(--error);
+  --bs-btn-active-bg: #fbecef;
+}
+
+/* ---------- Footer ---------- */
+
+.footer-taller {
+  padding-block: 3rem 2rem;
+  background: var(--ink);
+  color: #dfe4f7;
+}
+
+.footer-taller a {
+  color: #fff;
+  font-weight: 700;
+  text-underline-offset: 0.25em;
+}
+
+.footer-taller a:hover {
+  color: var(--highlight);
+}
+
+.marca-footer,
+.marca-footer:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.marca-footer .marca-simbolo {
+  border-color: #fff;
+  box-shadow: 3px 3px 0 #fff;
+}
+
+.footer-texto {
+  max-width: 30rem;
+}
+
+.footer-legal {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 0.9rem;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 991.98px) {
+  .navbar-taller .navbar-collapse {
+    padding-top: 0.5rem;
+  }
+
+  .navbar-taller .nav-link {
+    padding-inline: 0 !important;
+    border-bottom: 0;
+    border-left: 3px solid transparent;
+  }
+
+  .navbar-taller .nav-link.active {
+    padding-left: 0.6rem !important;
+    border-left-color: var(--cobalt);
+  }
+
+  .codigo-tile {
+    transform: rotate(1.5deg);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .codigo-tile {
+    transform: none;
+  }
+
+  .codigo {
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+
+  .panel-formulario {
+    box-shadow: 6px 6px 0 var(--ink);
+    border-top-width: 6px;
+  }
+
+  .pie-formulario .btn {
+    width: 100%;
+  }
+
+  .pie-formulario {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
